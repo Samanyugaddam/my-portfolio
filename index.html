@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samanyu Gaddam - GIS Professional & Geoinformatics Developer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Samanyu Gaddam - Expert GIS Professional and Geoinformatics Developer specializing in remote sensing, spatial analysis, and innovative geospatial solutions.">
+    <meta name="keywords" content="GIS, Geoinformatics, Remote Sensing, WebGIS, Spatial Analysis, ISRO, ArcGIS, Machine Learning, AWS, Samanyu Gaddam">
+    <meta name="author" content="Samanyu Gaddam">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Samanyu Gaddam - GIS Professional Portfolio">
+    <meta property="og:description" content="Innovative geospatial solutions and cutting-edge GIS development">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://samanyugaddam.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="satellite-animation">
+                <div class="satellite-container">
+                    <div class="satellite-body"></div>
+                    <div class="satellite-panel left"></div>
+                    <div class="satellite-panel right"></div>
+                    <div class="satellite-antenna"></div>
+                </div>
+                <div class="orbit-ring ring-1"></div>
+                <div class="orbit-ring ring-2"></div>
+                <div class="orbit-ring ring-3"></div>
+            </div>
+            <h2 class="loading-text">Samanyu's Portfolio Loading</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Cursor Trailer -->
+    <div id="cursor-trailer"></div>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="three-canvas"></canvas>
+    
+    <!-- Particle System -->
+    <div id="particles-container"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-satellite"></i>
+                </div>
+                <span class="logo-text">Samanyu G</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" data-section="home">
+                    <span class="nav-text">Home</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="#about" class="nav-link" data-section="about">
+                    <span class="nav-text">About</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">
+                    <span class="nav-text">Skills</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">
+                    <span class="nav-text">Journey</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">
+                    <span class="nav-text">Projects</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="#location" class="nav-link" data-section="location">
+                    <span class="nav-text">Location</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">
+                    <span class="nav-text">Contact</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <div class="hero-stars"></div>
+                <div class="hero-constellation"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-intro">
+                    <div class="hero-greeting">
+                        <span class="greeting-line">Hello, I'm</span>
+                    </div>
+                    <h1 class="hero-name">
+                        <span class="name-part">SAMANYU</span>
+                        <span class="name-part">GADDAM</span>
+                    </h1>
+                    <div class="hero-title">
+                        <span class="title-prefix">></span>
+                        <span class="title-text" id="typing-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <p class="hero-description">
+                        Pioneering the future of geospatial technology through innovative GIS solutions, 
+                        advanced remote sensing techniques, and cutting-edge spatial analysis. 
+                        Transforming data into actionable insights for a better world.
+                    </p>
+                </div>
+                
+                <div class="hero-actions">
+                    <button class="cta-button primary" onclick="scrollToSection('projects')">
+                        <span class="btn-text">Explore My Work</span>
+                        <span class="btn-icon"><i class="fas fa-rocket"></i></span>
+                        <div class="btn-particles"></div>
+                    </button>
+                    <button class="cta-button secondary" onclick="scrollToSection('contact')">
+                        <span class="btn-text">Let's Connect</span>
+                        <span class="btn-icon"><i class="fas fa-satellite-dish"></i></span>
+                    </button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-target="8.20">0</span>
+                            <span class="stat-label">M.Tech CGPA</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-target="184">0</span>
+                            <span class="stat-label">GATE GE'25 AIR</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-target="15 ">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-target="20+">0</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-scroll">
+                    <div class="scroll-indicator">
+                        <span class="scroll-text">Scroll to explore</span>
+                        <div class="scroll-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-sidebar">
+                <div class="social-links">
+                    <a href="tel:+919121403971" class="social-link" data-tooltip="Call Me">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="mailto:sam18102001@gmail.com" class="social-link" data-tooltip="Email Me">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/samanyug1810" target="_blank" class="social-link" data-tooltip="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Samanyugaddam" target="_blank" class="social-link" data-tooltip="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+91 9121403971</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">sam18102001@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Dehradun, India</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-background">
+                <div class="floating-elements">
+                    <div class="floating-satellite"></div>
+                    <div class="floating-earth"></div>
+                    <div class="floating-radar"></div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Passionate about transforming geospatial data into meaningful insights</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="about-intro">
+                            <p>
+                                I am a dedicated GIS and Remote Sensing (RS) professional, and a passionate Geoinformatics enthusiast.
+                                I have completed my B.Tech in Geoinformatics from Andhra University and M.Tech in Geoinformatics from the prestigious IIRS-ISRO.
+                                My expertise spans spatial analysis, remote sensing, WebGIS, machine learning, and CloudGIS. 
+                                I am driven by a passion for developing innovative geospatial solutions that bridge technology and real-world challenges.
+                            </p>
+                            <p>
+                                With hands-on experience at leading organizations such as Cognizant and GCRS, I have contributed to a variety of GIS and RS-based projects,
+                                developed scalable geospatial applications, and worked on real-time remote sensing applications. 
+                                I have also actively participated in mapathons and presented my research at international conferences. 
+                                My work focuses on leveraging cutting-edge geospatial technologies to solve complex spatial problems.
+                            </p>
+                        </div>
+                        
+                        <div class="expertise-areas">
+                            <h3>Areas of Expertise</h3>
+                            <div class="expertise-grid">
+                                <div class="expertise-item">
+                                    <i class="fas fa-globe"></i>
+                                    <span>GIS & Remote Sensing</span>
+                                </div>
+                                <div class="expertise-item">
+                                    <i class="fas fa-brain"></i>
+                                    <span>Machine Learning</span>
+                                </div>
+                                <div class="expertise-item">
+                                    <i class="fas fa-cloud"></i>
+                                    <span>Cloud Computing</span>
+                                </div>
+                                <div class="expertise-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>Web Development</span>
+                                </div>
+                                <div class="expertise-item">
+                                    <i class="fas fa-satellite"></i>
+                                    <span>Spatial Analysis</span>
+                                </div>
+                                <div class="expertise-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Data Visualization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>Education Excellence</h3>
+                                <p>M.Tech from IIRS-ISRO with 8.20 CGPA and GATE AIR 184</p>
+                                <div class="highlight-details">
+                                    <span>🎯 Top 5 rank holder in B.Tech</span>
+                                    <span>📚 Research published at SocPros'25</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>Professional Impact</h3>
+                                <p>Experience at Cognizant and GCRS with government project contributions</p>
+                                <div class="highlight-details">
+                                    <span>💼 GIS Programmer Analyst</span>
+                                    <span>🌍 Biodiversity conservation projects</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>Innovation & Research</h3>
+                                <p>Developed serverless healthcare applications and ML-based solutions</p>
+                                <div class="highlight-details">
+                                    <span>🔬 AWS Serverless architecture</span>
+                                    <span>🤖 Random Forest modeling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Arsenal</h2>
+                    <p class="section-subtitle">Comprehensive toolkit for geospatial innovation</p>
+                </div>
+                
+                <div class="skills-container">
+                    <div class="skills-navigation">
+                        <button class="skill-nav-btn active" data-category="all">All Skills</button>
+                        <button class="skill-nav-btn" data-category="programming">Programming</button>
+                        <button class="skill-nav-btn" data-category="gis">GIS & RS</button>
+                        <button class="skill-nav-btn" data-category="webgis">WebGIS</button>
+                        <button class="skill-nav-btn" data-category="data">Data Science</button>
+                    </div>
+                    
+                    <div class="skills-grid">
+                        <!-- Programming Skills -->
+                        <div class="skill-category" data-category="programming">
+                            <div class="skill-header">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3>Programming Languages</h3>
+                            </div>
+                            <div class="skill-items">
+                                <div class="skill-item" data-level="95">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Python</span>
+                                        <span class="skill-level">95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="88">
+                                    <div class="skill-info">
+                                        <span class="skill-name">R Programming</span>
+                                        <span class="skill-level">88%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="85">
+                                    <div class="skill-info">
+                                        <span class="skill-name">JavaScript</span>
+                                        <span class="skill-level">85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="80">
+                                    <div class="skill-info">
+                                        <span class="skill-name">C/C++</span>
+                                        <span class="skill-level">80%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- GIS Skills -->
+                        <div class="skill-category" data-category="gis">
+                            <div class="skill-header">
+                                <div class="skill-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3>GIS & Remote Sensing</h3>
+                            </div>
+                            <div class="skill-items">
+                                <div class="skill-item" data-level="98">
+                                    <div class="skill-info">
+                                        <span class="skill-name">ArcGIS Pro/Enterprise</span>
+                                        <span class="skill-level">98%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 98%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="95">
+                                    <div class="skill-info">
+                                        <span class="skill-name">QGIS</span>
+                                        <span class="skill-level">95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="90">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Google Earth Engine</span>
+                                        <span class="skill-level">90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="85">
+                                    <div class="skill-info">
+                                        <span class="skill-name">ERDAS IMAGINE</span>
+                                        <span class="skill-level">85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- WebGIS Skills -->
+                        <div class="skill-category" data-category="webgis">
+                            <div class="skill-header">
+                                <div class="skill-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <h3>WebGIS & Cloud</h3>
+                            </div>
+                            <div class="skill-items">
+                                <div class="skill-item" data-level="92">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Leaflet.js</span>
+                                        <span class="skill-level">92%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="88">
+                                    <div class="skill-info">
+                                        <span class="skill-name">AWS Cloud</span>
+                                        <span class="skill-level">88%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="90">
+                                    <div class="skill-info">
+                                        <span class="skill-name">PostgreSQL/PostGIS</span>
+                                        <span class="skill-level">90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="85">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Docker</span>
+                                        <span class="skill-level">85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Science Skills -->
+                        <div class="skill-category" data-category="data">
+                            <div class="skill-header">
+                                <div class="skill-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <h3>Data Science & ML</h3>
+                            </div>
+                            <div class="skill-items">
+                                <div class="skill-item" data-level="93">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Machine Learning</span>
+                                        <span class="skill-level">93%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 93%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="87">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Data Visualization</span>
+                                        <span class="skill-level">87%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 87%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="90">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Statistical Analysis</span>
+                                        <span class="skill-level">90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="85">
+                                    <div class="skill-info">
+                                        <span class="skill-name">PowerBI</span>
+                                        <span class="skill-level">85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="--width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-summary">
+                        <div class="summary-item">
+                            <span class="summary-number">15+</span>
+                            <span class="summary-label">Programming Languages</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-number">20+</span>
+                            <span class="summary-label">GIS Softwares and RS techniques</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-number">6+</span>
+                            <span class="summary-label">Platforms & services</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-number">30+</span>
+                            <span class="summary-label">Certifications</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+<section id="experience" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Professional Journey</h2>
+            <p class="section-subtitle">A timeline of growth, learning, and achievements</p>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <!-- M.Tech Timeline Item -->
+            <div class="timeline-item" data-year="2023-2025">
+                <div class="timeline-marker education">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - 2025</div>
+                    <h3>M.Tech in Geoinformatics (RS & GIS)</h3>
+                    <h4>Indian Institute of Remote Sensing, IIRS-ISRO</h4>
+                    <div class="timeline-details">
+                        <div class="detail-item">
+                            <i class="fas fa-star"></i>
+                            <span>CGPA: 8.24/10</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>GATE 2025 GE AIR 184</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-research"></i>
+                            <span>Presented research work at SocPros'25 International Conference, IITR, (Book of Abstracts)</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-satellite"></i>
+                            <span>YUVIKA Rocket model launch volunteer</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>Mapathon event organized by ISRO&ISRS</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Remote Sensing</span>
+                        <span class="tag">Spatial Analysis</span>
+                        <span class="tag">GIS</span>
+                        <span class="tag">Research & Geoinformatics Projects</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cognizant Timeline Item -->
+            <div class="timeline-item" data-year="2023">
+                <div class="timeline-marker work">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Apr 2023 - Sept 2023</div>
+                    <h3>GIS Programmer Analyst</h3>
+                    <h4>Cognizant Technology Solutions, Chennai</h4>
+                    <div class="timeline-details">
+                        <div class="detail-item">
+                            <i class="fas fa-code"></i>
+                            <span>WebGIS application development</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-server"></i>
+                            <span>ArcGIS Enterprise and Online services</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Spatial analysis and geoprocessing</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-database"></i>
+                            <span>Database integration and management</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">ArcGIS</span>
+                        <span class="tag">WebGIS</span>
+                        <span class="tag">Geoprocessing</span>
+                        <span class="tag">Programming</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GCRS Timeline Item -->
+            <div class="timeline-item" data-year="2022-2023">
+                <div class="timeline-marker work">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Dec 2022 - Apr 2023</div>
+                    <h3>GIS Analyst</h3>
+                    <h4>GCRS (Geo Climate Risk Solutions), Visakhapatnam</h4>
+                    <div class="timeline-details">
+                        <div class="detail-item">
+                            <i class="fas fa-tree"></i>
+                            <span>Government biodiversity conservation project</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Machine learning for Forestry Related Project</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-satellite-dish"></i>
+                            <span>Remote sensing and Google Earth Engine</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>Cross-functional team collaboration</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Environmental GIS</span>
+                        <span class="tag">Google Earth Engine</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Real Time Projects</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- B.Tech Timeline Item -->
+            <div class="timeline-item" data-year="2019-2023">
+                <div class="timeline-marker education">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2019 - 2023</div>
+                    <h3>B.Tech in Geoinformatics</h3>
+                    <h4>Andhra University, Visakhapatnam</h4>
+                    <div class="timeline-details">
+                        <div class="detail-item">
+                            <i class="fas fa-medal"></i>
+                            <span>CGPA: 8.54/10 - Top 5 rank holder</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-microphone"></i>
+                            <span>Event organizer (ISG & IEEE)</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Campus ambassador - Techlearn</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Technical event: Treasure hunt by geocoding</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Geoinformatics</span>
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Event Management</span>
+                        <span class="tag">Technical Skills</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Schooling Timeline Item (Smaller, Right Side) -->
+            <div class="timeline-item timeline-item-small" data-year="2017-2019">
+                <div class="timeline-marker education">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2017 - 2019</div>
+                    <h3>Senior Secondary & Secondary Education</h3>
+                    <h4>Board of Intermediate Education, Andhra Pradesh</h4>
+                    <div class="timeline-details">
+                        <div class="detail-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>12th Grade (Intermediate): 9.6 CGPA</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-medal"></i>
+                            <span>10th Grade (SSC): 10.0 CGPA</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-book"></i>
+                            <span>Science Stream - Mathematics, Physics, Chemistry</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-award"></i>
+                            <span>Excellent academic performance</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Mathematics</span>
+                        <span class="tag">Science</span>
+                        <span class="tag">Academic Excellence</span>
+                        <span class="tag">Foundation Studies</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+       
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Innovative solutions that make a difference</p>
+                </div>
+                
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="research">Research</button>
+                    <button class="filter-btn" data-filter="web">WebGIS</button>
+                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                    <button class="filter-btn" data-filter="analysis">Spatial Analysis</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Featured Project -->
+                    <div class="project-card featured" data-category="research web">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-status">Masters Research Work</div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">AWS Serverless</span>
+                                    <span class="tech-tag">Spatial Algorithms</span>
+                                    <span class="tech-tag">WebGIS</span>
+                                    <span class="tech-tag">CloudGIS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AWS Scalable Serverless geospatial WebGIS Application leveraging FaaS and BaaS to integrate Vector Based Algorithms</h3>
+                            <p class="project-description">
+                                Developed a scalable serverless AWS-based WebGIS healthcare application 
+                                leveraging FaaS and BaaS to integrate vector-based geospatial algorithms, 
+                                with PostGIS-backed spatial data, with running AWS Lambda functions and API Gateway for frontend routing. 
+                                Presented this research at an international conference at IIT Roorkee in 2025.
+                            </p>
+                            <div class="project-highlights">
+                                <div class="highlight">
+                                    <i class="fas fa-award"></i>
+                                    <span>Published & Presented at SocPros'25 Conference, IITR</span>
+                                </div>
+                                <div class="highlight">
+                                    <i class="fas fa-cloud"></i>
+                                    <span>Auto-scaling with minimal infrastructure management</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn primary">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Research
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="research ml">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-status">Bachelors Thesis</div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Random Forest</span>
+                                    <span class="tech-tag">Sentinel-1,2 Data</span>
+                                    <span class="tech-tag">Forestry-Field Work </span>
+                                    <span class="tech-tag">Machine Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Estimation of Tree Height using Geospatial Technologies and Machine Learning Algorithms – A Study Area in Kambalakonda Reserve Forest, AP, India</h3>
+                            <p class="project-description">
+                                Developed a Random Forest model to estimate tree height in Kambalakonda Reserve forest, Visakhapatnam 
+                                using Sentinel-1 interferometric coherence, Sentinel-2 biophysical parameters (EVI, FVC, LAI, Red band) 
+                                and SRTM DEM, achieving a good R² and RMSE values.
+                            </p>
+                            <div class="project-features">
+                                <span> Field work collaboration with Forest Department</span>
+                                <span> Multi-sensor data integration</span>
+                                <span> Advanced ML algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-status">FOSS4G</div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Frontend</span>
+                                    <span class="tech-tag">Backend</span>
+                                     <span class="tech-tag">PostGIS</span>
+                                      <span class="tech-tag">FOSS4G Tools</span>
+                                    <span class="tech-tag">Leaflet</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Enhancing Healthcare Accessibility through Spatial Data Integration, Web Mapping Technologies and Visualizations using FOSS4G GIS tools and services</h3>
+                            <p class="project-description">
+                                Built a comprehensive web-based GIS platform for Dehradun using FOSS4G tools - 
+                                Flask backend, PostGIS spatial database, HTML, CSS, Modern JS, Leaflet Routing Machine, GeoServer, 
+                                and MapStore integration.
+                            </p>
+                            <div class="project-features">
+                                <span>Nearest healthcare hospital finder</span>
+                                <span> Routing and Healthcare accessibility</span>
+                                <span> Open source GIS technology stack</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="analysis">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-status">Crime Intelligence</div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">ArcGIS Pro</span>
+                                    <span class="tech-tag">Intelligence</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Crime Analysis: Suspect Finding Analysis in Visakhapatnam, AP using ArcGIS and other Geospatial Tools</h3>
+                            <p class="project-description">
+                                Developed a GIS-based approach to identify crime suspects using co-traveller analysis 
+                                from simulated mobile location data in Visakhapatnam. Leveraged ArcMap and ArcGIS Pro Intelligence
+                                to model spatial movements and pinpoint potential offenders based on proximity and time-based tracking.
+                                
+                            </p>
+                            <div class="project-features">
+                                <span>Suspect-finding algorithms</span>
+                                <span> Co-traveler analysis</span>
+                                <span> Crime pattern visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="project-card" data-category="analysis">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-status">Site Suitability Analysis for Construction of a PHC in Araku Valley, AP USING GIS Techniques and AHP</div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">AHP</span>
+                                    <span class="tech-tag">Multi-criteria</span>
+                                    <span class="tech-tag">Spatial Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">PHC Site Suitability Analysis</h3>
+                            <p class="project-description">
+                                Conducted a GIS-based site suitability analysis for constructing a Primary Health Centre (PHC) in Araku Valley
+                                using AHP and Weighted Linear Combination methods. Integrated multi-criteria geospatial data to identify optimal locations
+                                using FOSS4G tools and remote sensing data.
+                            </p>
+                            <div class="project-features">
+                                <span>Multi-criteria decision analysis</span>
+                                <span> AHP methodology</span>
+                                <span> Healthcare accessibility optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-card" data-category="analysis ml">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-status">Change Detection</div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Sentinel-2</span>
+                                    <span class="tech-tag">Segmentation</span>
+                                    <span class="tech-tag">Classification</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Geospatial Change Detection</h3>
+                            <p class="project-description">
+                                Advanced geospatial change detection using segmentation and classification 
+                                techniques with Sentinel-2 data for an Area of Interest (AOI) in Delhi, India. 
+                                Implemented cutting-edge remote sensing methodologies.
+                            </p>
+                            <div class="project-features">
+                                <span>Advanced segmentation algorithms</span>
+                                <span> Multi-temporal analysis</span>
+                                <span> High-resolution change mapping</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Project 7 -->
+                    <div class="project-card" data-category="Crime analysis">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-status">Crime analysis and GIS Visualizations</div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">PostgreSQL-PostGIS</span>
+                                    <span class="tech-tag">PowerBI</span>
+                                    <span class="tech-tag">Crime Analysis</span>
+                                    <span class="tech-tag">Spatial Vector basedAnalysis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Crime Analysis of Boston City using PostgreSQL, QGIS and Visualization using BI tools</h3>
+                            <p class="project-description">
+                                Conducted spatial crime analysis of Boston using PostgreSQL with PostGIS, QGIS, and Power BI 
+                                to identify hotspots and visualize patterns. Integrated spatial queries, heatmaps, and hotspot analysis 
+                                with BI dashboards to support evidence-based policing and GIS based stratergies.
+                            </p>
+                            <div class="project-features">
+                                <span>Spatial Crime Analysis</span>
+                                <span>Databases</span>
+                                <span>BI Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projects-cta">
+                    <p>Interested in collaborating on innovative geospatial projects?</p>
+                    <button class="cta-button primary" onclick="scrollToSection('contact')">
+                        <span class="btn-text">Let's Work Together</span>
+                        <span class="btn-icon"><i class="fas fa-handshake"></i></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Current Location</h2>
+                    <p class="section-subtitle">Where innovation meets opportunity</p>
+                </div>
+                
+                <div class="location-content">
+                    <div class="location-info">
+                        <div class="location-details">
+                            <div class="location-header">
+                                <h3>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Dehradun, Uttarakhand, India
+                                </h3>
+                                <div class="coordinates">
+                                    <span class="coord-label">Coordinates:</span>
+                                    <span class="coord-value">30.3165° N, 78.0322° E</span>
+                                </div>
+                            </div>
+                            
+                            <p class="location-description">
+                                Currently based in the picturesque city of Dehradun, the capital of Uttarakhand 
+                                and home to the prestigious Indian Institute of Remote Sensing (IIRS-ISRO). 
+                                This vibrant city in the Himalayan foothills provides the perfect environment 
+                                for geospatial research and innovation.
+                            </p>
+                            
+                            <div class="location-highlights">
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <div class="highlight-info">
+                                        <h4>Himalayan Gateway</h4>
+                                        <p>Located in the foothills of the majestic Himalayas</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-satellite"></i>
+                                    </div>
+                                    <div class="highlight-info">
+                                        <h4>ISRO Research Hub</h4>
+                                        <p>Center for space technology and geospatial research</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="highlight-info">
+                                        <h4>Education Capital</h4>
+                                        <p>Home to prestigious educational institutions</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-tree"></i>
+                                    </div>
+                                    <div class="highlight-info">
+                                        <h4>Green Environment</h4>
+                                        <p>Clean air and natural beauty for creative thinking</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-section">
+                        <div class="map-container">
+                            <div id="interactive-map"></div>
+                            <div class="map-controls">
+                                <button class="map-btn" id="satellite-view">
+                                    <i class="fas fa-satellite"></i>
+                                    Satellite
+                                </button>
+                                <button class="map-btn" id="terrain-view">
+                                    <i class="fas fa-mountain"></i>
+                                    Terrain
+                                </button>
+                                <button class="map-btn" id="street-view">
+                                    <i class="fas fa-road"></i>
+                                    Streets
+                                </button>
+                            </div>
+                            <div class="map-info">
+                                <div class="info-item">
+                                    <span class="info-label">Altitude:</span>
+                                    <span class="info-value">640m above sea level</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Climate:</span>
+                                    <span class="info-value">Pleasant subtropical highland</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Time Zone:</span>
+                                    <span class="info-value">IST (UTC+5:30)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="nearby-places">
+                            <h4>Nearby Notable Places</h4>
+                            <div class="places-list">
+                                <div class="place-item">
+                                    <i class="fas fa-university"></i>
+                                    <span>IIRS-ISRO Campus</span>
+                                    <small> </small>
+                                </div>
+                                <div class="place-item">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Mussoorie Hills</span>
+                                    <small>35 km</small>
+                                </div>
+                                <div class="place-item">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Forest Research Institute</span>
+                                    <small>5 km</small>
+                                </div>
+                                <div class="place-item">
+                                    <i class="fas fa-plane"></i>
+                                    <span>Jolly Grant Airport</span>
+                                    <small>25 km</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Let's Connect</h2>
+                    <p class="section-subtitle">Please feel free to connect to discuss anything</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-intro">
+                            <h3>Get In Touch</h3>
+                            <p>
+                                Whether you're looking to collaborate on innovative geospatial solutions, 
+                                discuss opportunities, or to connect with me regarding any geospatial or general research, 
+                                I'd love to hear from you. Let's create something amazing together!
+                            </p>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:+919121403971" class="contact-method phone">
+                                <div class="method-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Phone</span>
+                                    <span class="method-value">+91 9121403971</span>
+                                    <span class="method-description">Available 9 AM - 7 PM IST</span>
+                                </div>
+                                <div class="method-action">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            
+                            <a href="mailto:sam18102001@gmail.com" class="contact-method email">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Email</span>
+                                    <span class="method-value">sam18102001@gmail.com</span>
+                                    <span class="method-description">Response within 24 hours</span>
+                                </div>
+                                <div class="method-action">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/samanyug1810" target="_blank" class="contact-method linkedin">
+                                <div class="method-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">LinkedIn</span>
+                                    <span class="method-value">@samanyug1810</span>
+                                    <span class="method-description">Professional networking</span>
+                                </div>
+                                <div class="method-action">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </div>
+                            </a>
+                            
+                            <a href="https://github.com/Samanyugaddam" target="_blank" class="contact-method github">
+                                <div class="method-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">GitHub</span>
+                                    <span class="method-value">@samanyug1810</span>
+                                    <span class="method-description">Code repositories</span>
+                                </div>
+                                <div class="method-action">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="availability-status">
+                            <div class="status-indicator">
+                                <div class="status-dot"></div>
+                                <span>Available for new projects</span>
+                            </div>
+                            <p>Currently accepting freelance and consulting opportunities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-section">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-header">
+                                <h3>Send a Message</h3>
+                                <p>Let's discuss your project requirements</p>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <span class="form-highlight"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                    <span class="form-highlight"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="form-highlight"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                                <span class="form-highlight"></span>
+                            </div>
+                            
+                           <!-- <div class="form-group">
+                                <label for="projectType">Project Type</label>
+                                <select id="projectType" name="projectType" required>
+                                    <option value="">Select project type</option>
+                                    <option value="gis-analysis">GIS Analysis</option>
+                                    <option value="webgis-development">WebGIS Development</option>
+                                    <option value="remote-sensing">Remote Sensing</option>
+                                    <option value="machine-learning">Machine Learning</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="research">Research Collaboration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="form-highlight"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="under-10k">Under ₹10,000</option>
+                                    <option value="10k-50k">₹10,000 - ₹50,000</option>
+                                    <option value="50k-100k">₹50,000 - ₹1,00,000</option>
+                                    <option value="100k-plus">₹1,00,000+</option>
+                                    <option value="discuss">Let's discuss</option>
+                                </select>
+                                <span class="form-highlight"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Project Description</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                    placeholder="Tell me about your project, requirements, timeline, and any specific goals you have in mind..."></textarea>
+                                <span class="form-highlight"></span>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="updates" name="updates">
+                                <label for="updates" class="checkbox-label">
+                                    <span class="checkbox-custom"></span>
+                                    I'd like to receive updates about new projects and GIS insights
+                                </label>
+                            </div>-->
+                            
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                                <div class="btn-loading">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </div>
+                            </button>
+                        </form>
+                        
+                        <div class="form-success" id="form-success">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Message Sent Successfully!</h3>
+                            <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <span>Samanyu Gaddam</span>
+                    </div>
+                    <p class="footer-description">
+                        Transforming spatial data into actionable insights through innovative 
+                        GIS solutions and cutting-edge geospatial technology.
+                    </p>
+                    <div class="footer-social">
+                        <a href="tel:+919121403971" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="mailto:sam18102001@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/samanyug1810" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Samanyugaddam" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#projects">GIS Analysis</a></li>
+                        <li><a href="#projects">WebGIS Development</a></li>
+                        <li><a href="#projects">Remote Sensing</a></li>
+                        <li><a href="#projects">Spatial Modeling</a></li>
+                        <li><a href="#contact">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dehradun, Uttarakhand, India</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9121403971</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>sam18102001@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Samanyu Gaddam. All rights reserved.</p>
+                    <p>Crafted with ❤️ for the geospatial community</p>
+                </div>
+                <div class="footer-tech">
+                    <span>Built with cutting-edge web technologies</span>
+                    <div class="tech-icons">
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fab fa-js-square"></i>
+                        <i class="fas fa-cube"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
